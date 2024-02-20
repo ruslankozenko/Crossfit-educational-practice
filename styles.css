@@ -262,7 +262,7 @@ h6 {
 }
 
 .header-menu-link.is-current::after {
-    content: "";
+    content: '';
     width: 5px;
     aspect-ratio: 1;
     background-color: currentColor;
@@ -288,6 +288,31 @@ h6 {
 
 .button:hover {
     background-color: var(--color-light-gray);
+}
+
+.button.transparent {
+    position: relative;
+    height: var(--input-height);
+    padding-left: 31px;
+    padding-right: 80px;
+    background-color: transparent;
+    border: var(--border);
+}
+
+.button.transparent::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    background: url('./icon/arrow-top-right.svg') center/70% no-repeat;
+    border: var(--border);
+    border-radius: 50%;
+}
+
+.button.transparent:hover {
+    color: var(--color-dark);
+    background-color: var(--color-dark-gray);
 }
 
 .header-actions {
@@ -413,7 +438,7 @@ h6 {
 }
 
 .motivation-card-body {
-    padding-left: 35px;
+    padding-left: 45px;
 }
 
 .motivation-card-title:not(:last-child) {
@@ -426,6 +451,12 @@ h6 {
 
 .motivation-card-description {
     max-width: 400px;
+}
+
+@media screen and (max-width: 1919px) {
+    .motivation-card-image {
+        margin-block: -20px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -453,7 +484,15 @@ h6 {
         row-gap: 20px;
     }
 
-    
+    .motivation-card {
+        padding-block: 50px;
+    }
+
+    .motivation-card-image {
+        max-width: 30%;
+        height: auto;
+        margin-block: 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -485,7 +524,23 @@ h6 {
         margin-bottom: 5px;
      }
 
+     .motivation-card,
+     .motivation-item:nth-child(even) .motivation-card {
+        flex-direction: column-reverse;
+     }
 
+     .motivation-card {
+        padding-block: 30px;
+        row-gap: 30px;
+     }
+
+     .motivation-card-image {
+        max-width: 60%;
+     }
+
+     .motivation-card-description:not(:last-child) {
+        margin-bottom: 20px;
+     }
 }
     
  
